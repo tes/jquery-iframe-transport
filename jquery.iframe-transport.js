@@ -128,7 +128,7 @@
       });
       form.remove();
       iframe.off("load").one("load", function() { iframe.remove(); });
-      iframe.attr("src", "javascript:false;");
+      iframe.attr("src", "about:blank");
     }
 
     if (/^IFRAME(?:GET|HEAD)$/.test(requestType)) {
@@ -206,7 +206,7 @@
         // The `send` function is called by jQuery when the request should be
         // sent.
         send: function(headers, completeCallback) {
-          iframe = $("<iframe src='javascript:false;' name='" + name +
+          iframe = $("<iframe src='about:blank' name='" + name +
             "' id='" + name + "' style='display:none'></iframe>");
 
           // The first load event gets fired after the iframe has been injected
